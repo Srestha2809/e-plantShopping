@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, updateQuantity } from './CartSlice';
 
-function CartItem({ onNavigate }) {
+function CartItem({ onHomeClick, onPlantsClick, onContinueShopping }) {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
 
@@ -33,11 +33,11 @@ function CartItem({ onNavigate }) {
     <div>
       <nav className="navbar">
         <div className="nav-links">
-          <span onClick={() => onNavigate('landing')}>Home</span>
-          <span onClick={() => onNavigate('products')}>Plants</span>
-          <span onClick={() => onNavigate('cart')}>Cart</span>
+          <a href="/" onClick={onHomeClick}>Home</a>
+          <a href="/" onClick={onPlantsClick}>Plants</a>
+          <a href="/" onClick={(e) => e.preventDefault()}>Cart</a>
         </div>
-        <div className="cart-icon" onClick={() => onNavigate('cart')}>
+        <div className="cart-icon">
           🛒 {totalQuantity}
         </div>
       </nav>
@@ -45,7 +45,7 @@ function CartItem({ onNavigate }) {
       <div className="cart-container">
         <div className="cart-summary">
           <p>Total items in cart: {totalQuantity}</p>
-          <p>Total cost: ${totalAmount.toFixed(2)}</p>
+          <p><strong>Total Cart Amount: ${totalAmount.toFixed(2)}</strong></p>
         </div>
 
         {cartItems.length === 0 && <p>Your cart is empty.</p>}
@@ -68,7 +68,7 @@ function CartItem({ onNavigate }) {
         ))}
 
         <div className="cart-actions">
-          <button className="continue-btn" onClick={() => onNavigate('products')}>Continue Shopping</button>
+          <button className="continue-btn" onClick={onContinueShopping}>Continue Shopping</button>
           <button className="checkout-btn" onClick={handleCheckout}>Checkout</button>
         </div>
       </div>

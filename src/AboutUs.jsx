@@ -2,14 +2,23 @@ import React from 'react';
 
 function AboutUs() {
   return (
-    <p className="about-us-paragraph">
-      Welcome to Paradise Nursery, where green dreams come to life. We are passionate about
-      bringing nature's beauty into your home with our carefully curated collection of houseplants.
-      From air-purifying favorites to vibrant flowering varieties, every plant we offer is chosen
-      for its quality, health, and ability to thrive indoors. Our mission is to make plant parenthood
-      accessible and enjoyable for everyone, whether you're a seasoned green thumb or just starting
-      your journey into indoor gardening.
-    </p>
+    <div className="about-us-container">
+      <h2>Welcome to Paradise Nursery</h2>
+      <p>
+        At Paradise Nursery, we believe every home deserves a little greenery. Founded by a
+        group of plant enthusiasts, our mission is to bring nature's beauty into your everyday
+        life through healthy, hand-picked houseplants.
+      </p>
+      <p>
+        We carefully curate every plant in our collection for quality and vitality, ensuring
+        that whether you're an experienced grower or just starting out, you'll find the perfect
+        addition to your indoor garden.
+      </p>
+      <p>
+        Our services include plant care guidance, personalized recommendations, and a
+        commitment to sustainable, eco-friendly growing practices from seed to shelf.
+      </p>
+    </div>
   );
 }
 
